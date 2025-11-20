@@ -3,95 +3,53 @@ STRING REVERSAL USING STACK:
 AIM: to write the program to implement string reversal 
 
 CODE:
-#include<stdio.h>
-#include<stdlib>
-int top=-1,max;
-char*stack;
-void display()
+#include <stdio.h>
+#include <stdlib.h>
+
+int top = -1;
+int size;
+char *STACK; // Dynamic Array
+
+void push(char item)
 {
-printf("there are %d elements in the stack\n",top+1);
-for(int i=top;i>=0;i--){
-if(i=top){
-printf("|%c|<-top\",stack[i]);
-}
-else{
-printf("|%c|\n",stack[i]);
-}
-void push(char item){
-if(top=max-1){
-printf("stack overflow");
-}
-else{
-top=top+1;
-stack[top]=item;
-}
-char pop(){
-char item;
-if(top==-1){
-printf("stack is underflow");
-return 0;
-}
-else{
-item=stack[top];
-top-=1;
-return item;
-}
-}
-void string reversal(){
-char string[max];
-printf("please enter the string you want to print in reverse in size of %d",max);
-scanf("%s",string);
-for(int c=0;c<max;c++)
-{
-push(string[c]);
-}}
-printf("reversed string");
-for(int c=0;c<max;c++)
-{
-printf("%c",pop());
-}
-int main(){
-int operator=0;top=-1;
-printf("enter the size of the char stack:");
-scanf("%d",&max);
-stack=realloc(stack,max);
-start:
-printf("what stack operation you want to perform\n1.basic operations\n2.stringreversal\n give your choice);
-scanf("%d",&operation);
-if(operation==2){
-string reversal();
-goto start;
-}
-elseif(operation==1){
-printf("please choose your stack operation to perform");
-while(operation!=4){
-printf("\n1.push\n2.pop\n3.display\n4.exit\n");
-scanf("%d",*&operation);
-switch(operation){
-case 1:
-char item;
-pritf("enter the character to push");
-scanf("%c",item);
-push(item);
-break;
-case 2:
-char c=pop();
-if(c!='\0')
-{
-printf("elements %c is popped out from top");
-break;
-case 3:
-display();
-break;
-case 4:
-return 0;
-default:
-pritf("incorrect input");
-operation=0;
-break;
-}}}
-else{
-goto start;}
-return 0;
+    if (top == (size - 1))
+    {
+        printf("Stack is already full, no additional push allowed - Overflow");
+    }
+    else
+    {
+        top = top + 1;
+        STACK[top] = item;
+    }
 }
 
+char pop()
+{
+    char temp = STACK[top];
+    top = top - 1;
+    return temp;
+}
+
+int main()
+{
+    printf("Enter the size of string to reverse: ");
+    scanf("%d", &size);
+    char input[size];
+    STACK = (char *)malloc(size * sizeof(char));
+
+    printf("Enter the string of size %d to reverse: ", size);
+    scanf("%s", &input);
+
+    for (int i = 0; i <= size - 1; i++)
+    {
+        push(input[i]);
+    }
+
+    printf("Reversed string is - \n");
+    for (int i = 0; i <= size - 1; i++)
+    {
+        printf("%c", pop());
+    }
+}
+StringReversal.c
+Displaying StringReversal.c.
