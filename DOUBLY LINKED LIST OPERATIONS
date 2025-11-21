@@ -1,3 +1,5 @@
+AIM: operations of doubly linked list
+code:
 #include <stdio.h>
 #include <stdlib.h>
 
