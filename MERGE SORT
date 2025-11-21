@@ -1,3 +1,5 @@
+AIM: To write the code on merge sorting
+code:
 #include <stdio.h>
 
 // Merge two sorted subarrays
