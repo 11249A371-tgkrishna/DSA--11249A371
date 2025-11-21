@@ -1,3 +1,6 @@
+AIM: To write the code on quick sorting method
+code:
+
 #include <stdio.h>
 
 //Swap the numbers / Call by referene to persist changes
