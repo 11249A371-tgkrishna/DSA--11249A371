@@ -1,3 +1,5 @@
+AIM: To write the code on linear search higlighting iterations\
+code:
 #include <stdio.h>
 int main()
 {
