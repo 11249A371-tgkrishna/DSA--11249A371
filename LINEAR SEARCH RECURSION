@@ -1,3 +1,4 @@
+AIM: To write linear search using recussion
 #include <stdio.h>
 #include <stdbool.h>
 
